@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: user-service
+
+  #DB ??
   h2:
     console:
       enabled: true
@@ -19,6 +21,7 @@ spring:
     hibernate:
       ddl-auto: create
 
+# Eureka ?? ??
 eureka:
   client:
     fetch-registry: true
@@ -28,5 +31,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+# ??? ?? ??
 greeting:
   message: Welcome to the Simple E-commerce.
