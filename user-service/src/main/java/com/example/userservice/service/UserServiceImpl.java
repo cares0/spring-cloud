@@ -5,7 +5,9 @@ import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.jpa.UserRepository;
 import com.example.userservice.vo.ResponseOrder;
+import feign.FeignException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.core.ParameterizedTypeReference;
@@ -24,6 +26,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
@@ -69,6 +72,10 @@ public class UserServiceImpl implements UserService {
                         new ParameterizedTypeReference<List<ResponseOrder>>() {});*/
 
         /* Using feign client */
+
+        /* Feign Exception Handling */
+
+        /* ErrorDecoder */
         List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
 
         userDto.setOrders(orderList);
