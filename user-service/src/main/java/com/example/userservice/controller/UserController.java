@@ -63,7 +63,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/users/{userId}")
     public ResponseEntity getUsers(@PathVariable("userId") String userId) {
         UserDto userDto = userService.getUserByUserId(userId);
 
